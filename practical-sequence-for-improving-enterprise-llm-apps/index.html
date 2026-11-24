@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<title>A Practical Sequence for Improving an Enterprise LLM Application</title>
+<meta name="description" content="A stepwise sequence for improving an enterprise LLM app: instrument, prompt, retrieve, swap models, then fine-tune if needed.">
+<style>body{font-family:Georgia,serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.7;color:#222}h1{line-height:1.25}h2{margin-top:2em}a{color:#0b5cad}</style>
+</head>
+<body>
+<article>
+<h1>A Practical Sequence for Improving an Enterprise LLM Application</h1>
+<p>Enterprise teams often try to improve a large language model application from every direction at once. A new prompt, a vector database, a fine-tune, and a model upgrade all land in the same sprint. When quality moves, nobody can say why. When it falls, nobody can roll back cleanly.</p>
+<p>A calmer sequence costs less and teaches more. It assumes you already have a workflow, some usage, and a way to look at failures. If you do not have those, get them before you buy more machinery.</p>
+<h2>Instrument first</h2>
+<p>Write down the task and the definition of an acceptable output. Collect traces. Build a modest evaluation set that a domain owner respects. Include format checks and, if the application retrieves or calls tools, scores for those steps too. This is not bureaucracy. It is how you will know whether a change helped.</p>
+<p>Add basic monitors for cost, latency, and error rate. An improvement that doubles spend or timeouts is not an improvement.</p>
+<h2>Tighten the task and the prompt</h2>
+<p>Many applications are vague. They ask the model to "be helpful" across too many jobs. Split obvious task types. Specify the output. Add a few carefully chosen examples. Constrain the model with schemas or validators where you can.</p>
+<p>Re-run the evaluation set after each meaningful prompt change. Keep the winners. Throw away clever instructions that only fix one favorite example.</p>
+<p>If quality is already good enough on a narrow path, consider narrowing the product rather than complicating the system.</p>
+<h2>Add retrieval when missing knowledge is the main error</h2>
+<p>When failures cluster around missing or stale facts, bring documents and records into the request through retrieval or direct lookup. Spend real effort on what is indexed, who is allowed to see it, and whether the right passage is retrieved at all. Measure retrieval separately from generation. A fluent answer from the wrong source is still wrong.</p>
+<p>Do not start with an elaborate multi-index design. Start with the corpus that the current errors actually needed.</p>
+<h2>Change models deliberately</h2>
+<p>Sometimes a stronger or cheaper model is the right move, or a smaller model will do once the task is well specified. Treat a model swap as its own experiment. Run the same evaluation set. Look at cost and latency. Do not assume a new flagship model will respect your instructions in the same way as the last one.</p>
+<h2>Fine-tune only after the ceiling is clear</h2>
+<p>If you still see a stable, repeated behavior gap, and you can collect clean training examples, then a focused fine-tune may pay off. Use it to lock style, format, or a narrow classification task, not as a dumping ground for facts. Keep a non-tuned baseline so you can tell whether the fine-tune is still earning its keep after the next prompt or model change.</p>
+<h2>Keep a changelog</h2>
+<p>The sequence works when someone owns it. Record what changed, why, and what the numbers did. That log is how a new engineer, or a skeptical executive, can trust the system. It also prevents the team from re-litigating a decision every time a new paper or vendor appears.</p>
+<p>When you need a shared explanation of why the sequence usually runs from prompts to retrieval to tuning, point colleagues to <a href="https://advantailabs.com/blog/prompt-engineering-vs-rag-vs-fine-tuning">Prompt Engineering vs RAG vs Fine-Tuning: Executive Guide</a>. Then return to your evaluation set. The sequence is a default, not a religion, and the failures in front of you still get the last word.</p>
+<p>Improve one layer at a time, measure, and only then add the next one. It looks slower on a roadmap. It is usually the fastest way to a system you can defend.</p>
+</article>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<title>What an AI POC Should Deliver in 8 to 12 Weeks</title>
+<meta name="description" content="The artifacts an 8 to 12 week AI POC should leave behind: evaluation, error analysis, cost envelope, and a go or no-go memo.">
+<style>body{font-family:Georgia,serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.7;color:#222}h1{line-height:1.25}h2{margin-top:2em}a{color:#0b5cad}</style>
+</head>
+<body>
+<article>
+<h1>What an AI POC Should Deliver in 8 to 12 Weeks</h1>
+<p>An eight to twelve week AI proof of concept is long enough to be honest and short enough to prevent a quiet rewrite of the original question. Used well, those weeks produce more than a demo video. They produce the evidence a leadership team needs to fund, reshape, or stop the work.</p>
+<p>If your POC only delivers a clickable prototype, you have spent the time on the least durable artifact. Prototypes go stale. The useful residue is the set of things another team could pick up without starting from myths.</p>
+<h2>A problem statement that survived contact with users</h2>
+<p>By the end of the period, the team should be able to describe the workflow in operational language: who starts it, what inputs arrive, what output is needed, and what a good day versus a bad day looks like. That statement should be tighter than the one you began with. If it has grown vaguer, the POC has drifted.</p>
+<p>Include the constraints that will matter later: data sensitivity, required auditability, expected volume, and the worst acceptable failure. These are not extras. They are part of the problem.</p>
+<h2>A baseline, an evaluation set, and an error analysis</h2>
+<p>Before celebrating model quality, show what happens with the current process or with a simple rule. Many AI ideas look strong until they are compared with a checklist, a search box, or a junior analyst following a script.</p>
+<p>The evaluation set should be real enough to be uncomfortable. It should include edge cases, messy inputs, and examples the sponsor has agreed are representative. Scores belong next to an error analysis: where the system fails, how serious those failures are, and whether they cluster in a way you can fix with better data, a narrower scope, or a human review step.</p>
+<p>A POC that cannot explain its mistakes is not ready to argue for production.</p>
+<h2>A cost, latency, and operations envelope</h2>
+<p>Decision makers need a first picture of what running the system would feel like. That includes rough cost per unit of work, response time under a realistic load, and the human effort still required. If a person must review every output, say so, and estimate that review time. If a vendor model is involved, record which one, what happens if prices change, and whether any data leaves your boundary.</p>
+<p>You do not need a perfect capacity plan. You need to avoid the surprise that a charming prototype is uneconomic or too slow once volume appears.</p>
+<h2>A production gap list and a decision memo</h2>
+<p>The last deliverable is a sober list of what is not done: integrations, access control, monitoring, fallback behavior, training for users, and open legal or compliance questions. Attach a recommendation. Proceed to a limited production pilot, continue research with a narrower brief, or stop. Each option should have a cost and a time range.</p>
+<p>Teams looking for a fuller treatment of budgets, timelines, and expected artifacts can use <a href="https://advantailabs.com/blog/ai-proof-of-concept-playbook">The AI Proof of Concept (POC) Playbook: Realistic Costs &amp; Deliverables</a> as a reference while they write that memo.</p>
+<h2>What not to optimize for</h2>
+<p>Do not spend the middle weeks polishing a user interface that will be thrown away. Do not chase a leaderboard score that is disconnected from the workflow. Do not add extra model types just to look sophisticated. The twelve-week clock is for learning and for leaving a trail.</p>
+<p>If you finish with a prototype, a trusted evaluation set, a clear error story, a cost envelope, and a written recommendation, the POC has done its job. Someone else can disagree with the recommendation. They should not have to guess how you got there.</p>
+</article>
+</body>
+</html>
